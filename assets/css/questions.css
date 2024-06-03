@@ -1,0 +1,146 @@
+/* Start Variables */
+:root {
+	--main-color: #19c8fa;
+	--margin-section: 110px 0;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	text-decoration: none;
+}
+html {
+	scroll-behavior: smooth;
+	direction: rtl;
+}
+body {
+	font-family: 'Cairo', sans-serif;
+}
+input {
+	border: none;
+}
+.container {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+/* Medium */
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+/* Large */
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+/* End Global Rules */
+/* Start Components */
+.special-heading {
+	text-align: center;
+	font-weight: normal;
+	font-size: 40px;
+	position: relative;
+	padding: 15px 0;
+	color: var(--main-color);
+	margin: 50px 0;
+}
+.special-heading::before {
+	content: '';
+	position: absolute;
+	width: 90px;
+	height: 2px;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: black;
+	-webkit-transform: translate(-50%);
+	-moz-transform: translate(-50%);
+	-ms-transform: translate(-50%);
+	-o-transform: translate(-50%);
+}
+.special-heading::after {
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border: 2px solid black;
+	border-radius: 50%;
+	bottom: -10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	left: 50%;
+	transform: translate(-50%);
+}
+/* End Components */
+/* Start navbar */
+nav .container a img {
+	width: 100px;
+	height: 38px;
+}
+nav .container a i {
+	font-size: 25px;
+	font-weight: bolder;
+	cursor: pointer;
+	color: black;
+}
+
+/* End navbar */
+/* Start Questions */
+section .container .content-text {
+	display: flex;
+	flex-wrap: wrap;
+}
+.content-text .content {
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	margin-bottom: 20px;
+	padding: 10px;
+	line-height: 2;
+	font-size: 20px;
+	display: flex;
+	width: 100%;
+	border-left: 10px solid var(--main-color);
+
+}
+.content-text .content img {
+	width: 50px;
+	height: 50px;
+}
+.content-text .content .text {
+	padding-right: 5px;
+	width: 100%;
+}
+@media (max-width: 768px) {
+	.content-text .content .text {
+		font-size: 15px;
+	}
+}
+.content-text .content .text h5 {
+	font-weight: bolder;
+}
+.content-text .content .text ul {
+	margin-right: 30px;
+}
+.content-text .content .text ul li::marker {
+	color: var(--main-color);
+}
+.content .text .contact {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 20px;
+}
+/* End Questions */

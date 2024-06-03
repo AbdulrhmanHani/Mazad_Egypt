@@ -1,0 +1,1172 @@
+/* Start Variables */
+
+:root {
+    --main-color: #19c8fa;
+    --margin-section: 110px 0;
+}
+
+
+/* End Variables */
+
+
+/* Start Global Rules */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    direction: rtl;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #fceed2;
+}
+
+body.dark-mode {
+    background-color: #040303;
+}
+
+ul li {
+    list-style: none;
+}
+
+input {
+    border: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Global Rules */
+
+
+/* Start Components */
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 20px;
+    }
+}
+
+.overlay-background {
+    position: fixed;
+    background-color: rgb(0 0 0 / 80%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9;
+}
+
+.overlay-background.active {
+    display: block;
+}
+
+
+/* End Components */
+
+
+/* Start Navbar */
+
+nav {
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .container img {
+    width: 100px;
+    height: 38px;
+}
+
+nav .container i {
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+nav .container i.sun {
+    color: #fff323;
+}
+
+
+/* End Navbar */
+
+
+/* Start Add Auction */
+
+.add-auction {
+    margin-top: 50px;
+}
+
+.add-auction .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.add-auction .container .box {
+    width: 25%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .add-auction .container .box {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .add-auction .container .box:hover {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        background-color: #112031;
+        color: white;
+    }
+    .add-auction .container .box:hover span {
+        background-color: #f90716;
+    }
+}
+
+.add-auction .container .box img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+.add-auction .container .box h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.add-auction .container .box span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #041c32;
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/* End Add Auction */
+
+
+/* Start Add Details Auction */
+
+.add-details-auction {
+    background: rgb(231, 226, 221);
+    width: 50%;
+    height: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: none;
+    z-index: 99999;
+    overflow-y: scroll;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .add-details-auction {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.add-details-auction::-webkit-scrollbar {
+    width: 12px;
+}
+
+.add-details-auction::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+.add-details-auction .preview img {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.add-details-auction label {
+    padding-bottom: 10px;
+    margin-top: 15px;
+    display: block;
+}
+
+.add-details-auction input {
+    padding: 6px 10px;
+    width: 100%;
+    margin: 5px 0 20px 0;
+    display: block;
+}
+
+.add-details-auction textarea {
+    resize: none;
+    width: 100%;
+    margin: 10px 0 0 0;
+    border: none;
+    display: block;
+}
+
+.add-details-auction .count {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.images-visa {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 30px 0 30px 20px;
+}
+
+.images-visa img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.add-details-auction input#submit-data-auction {
+    display: block;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.add-details-auction input#submit-data-auction:hover {
+    background-color: #fffcdc;
+    color: #000;
+}
+
+.add-details-auction form .buttons a {
+    color: #fff;
+    padding: 8px 0;
+    display: block;
+    background-color: #f90716;
+    margin: 0 auto;
+    text-align: center;
+    width: 20%;
+    text-decoration: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+
+/* End Add Details Auction */
+
+
+/* Start Auctions */
+
+section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+section .container .auctions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+section .container .auctions .auction {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+section .container .auctions .auction img {
+    width: 100%;
+    height: 250px;
+}
+
+section .container .auctions .auction h4 {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+section .container .auctions .auction h4.text-info {
+    color: #fff;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 17px;
+    left: -30px;
+    transform: rotate(50deg);
+    -webkit-transform: rotate(-54deg);
+    -moz-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    background-color: #f90716;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 10px;
+}
+
+section .container .auctions .auction h4.text-danger {
+    margin-bottom: 20px;
+}
+
+section .container .auctions .auction p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+section .container .auctions .auction h5 {
+    padding-right: 5px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+section .container .auctions .auction h5 span {
+    color: #345b63;
+    display: inline-block;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+    padding: 6px 5px;
+    letter-spacing: 1px;
+}
+
+section .container .auctions .auction button {
+    padding: 8px 25px;
+    margin: 0px auto 10px auto;
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: #112031;
+    color: white;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.read-more-desc {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffcdc;
+    padding: 20px;
+    color: black;
+    z-index: 9999;
+    display: none;
+    width: 50%;
+    height: fit-content;
+    overflow-wrap: break-word;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.read-more-desc #cancel-desc-auction {
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: -13px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 13px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: red;
+}
+
+.read-more-desc p {
+    margin-top: 30px;
+}
+
+.read-more-desc span {
+    display: block;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 10px;
+}
+
+
+/* End Auctions */
+
+
+/* Start Loading */
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    overflow: visible;
+    background-color: white;
+}
+
+.loading img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+
+/* End Loading */
+
+
+/* Start scroll top */
+
+.scroll-btn {
+    position: fixed;
+    right: 20px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 50%;
+    font-size: 25px;
+    transition: 0.5s bottom ease-in-out;
+    bottom: -50px;
+    cursor: pointer;
+}
+
+.scroll-btn.active {
+    bottom: 20px;
+}
+
+
+/* End scroll top */
+
+.message h4 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* Start Variables */
+
+:root {
+    --main-color: #19c8fa;
+    --margin-section: 110px 0;
+}
+
+
+/* End Variables */
+
+
+/* Start Global Rules */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    direction: rtl;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #fceed2;
+}
+
+body.dark-mode {
+    background-color: #040303;
+}
+
+ul li {
+    list-style: none;
+}
+
+input {
+    border: none;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+
+/* End Global Rules */
+
+
+/* Start Components */
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 20px;
+    }
+}
+
+.overlay-background {
+    position: fixed;
+    background-color: rgb(0 0 0 / 80%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 9;
+}
+
+.overlay-background.active {
+    display: block;
+}
+
+
+/* End Components */
+
+
+/* Start Navbar */
+
+nav {
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .container img {
+    width: 100px;
+    height: 38px;
+}
+
+nav .container i {
+    font-size: 25px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+nav .container i.sun {
+    color: #fff323;
+}
+
+
+/* End Navbar */
+
+
+/* Start Add Auction */
+
+.add-auction {
+    margin-top: 50px;
+}
+
+.add-auction .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.add-auction .container .box {
+    width: 25%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .add-auction .container .box {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .add-auction .container .box:hover {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        background-color: #112031;
+        color: white;
+    }
+    .add-auction .container .box:hover span {
+        background-color: #f90716;
+    }
+}
+
+.add-auction .container .box img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+.add-auction .container .box h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.add-auction .container .box span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+    background-color: #041c32;
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/* End Add Auction */
+
+
+/* Start Add Details Auction */
+
+.add-details-auction {
+    background: rgb(231, 226, 221);
+    width: 50%;
+    height: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: none;
+    z-index: 99999;
+    overflow-y: scroll;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .add-details-auction {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.add-details-auction::-webkit-scrollbar {
+    width: 12px;
+}
+
+.add-details-auction::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+.add-details-auction .preview img {
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.add-details-auction label {
+    padding-bottom: 10px;
+    margin-top: 15px;
+    display: block;
+}
+
+.add-details-auction input {
+    padding: 6px 10px;
+    width: 100%;
+    margin: 5px 0 20px 0;
+    display: block;
+}
+
+.add-details-auction textarea {
+    resize: none;
+    width: 100%;
+    margin: 10px 0 0 0;
+    border: none;
+    display: block;
+}
+
+.add-details-auction .count {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.images-visa {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 30px 0 30px 20px;
+}
+
+.images-visa img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.add-details-auction input#submit-data-auction {
+    display: block;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.add-details-auction input#submit-data-auction:hover {
+    background-color: #fffcdc;
+    color: #000;
+}
+
+.add-details-auction form .buttons a {
+    color: #fff;
+    padding: 8px 0;
+    display: block;
+    background-color: #f90716;
+    margin: 0 auto;
+    text-align: center;
+    width: 20%;
+    text-decoration: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+
+/* End Add Details Auction */
+
+
+/* Start Auctions */
+
+section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+section .container .auctions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+section .container .auctions .auction {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    max-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+section .container .auctions .auction img {
+    width: 100%;
+    height: 250px;
+}
+
+section .container .auctions .auction h4 {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+section .container .auctions .auction h4.text-info {
+    color: #fff;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 17px;
+    left: -30px;
+    transform: rotate(50deg);
+    -webkit-transform: rotate(-54deg);
+    -moz-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    -o-transform: rotate(50deg);
+    background-color: #f90716;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 10px;
+}
+
+section .container .auctions .auction h4.text-danger {
+    margin-bottom: 20px;
+}
+
+section .container .auctions .auction p {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+section .container .auctions .auction h5 {
+    padding-right: 5px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+section .container .auctions .auction h5 span {
+    color: #345b63;
+    display: inline-block;
+    margin-top: 15px;
+    border-bottom: 1px solid black;
+    padding: 6px 5px;
+    letter-spacing: 1px;
+}
+
+section .container .auctions .auction button {
+    padding: 8px 25px;
+    margin: 0px auto 10px auto;
+    display: block;
+    cursor: pointer;
+    border: none;
+    background-color: #112031;
+    color: white;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.read-more-desc {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffcdc;
+    padding: 20px;
+    color: black;
+    z-index: 9999;
+    display: none;
+    width: 50%;
+    height: fit-content;
+    overflow-wrap: break-word;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.read-more-desc #cancel-desc-auction {
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: -13px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 13px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: red;
+}
+
+.read-more-desc p {
+    margin-top: 30px;
+}
+
+.read-more-desc span {
+    display: block;
+    margin-bottom: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 6px 10px;
+}
+
+
+/* End Auctions */
+
+
+/* Start Loading */
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    overflow: visible;
+    background-color: white;
+}
+
+.loading img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+
+/* End Loading */
+
+
+/* Start scroll top */
+
+.scroll-btn {
+    position: fixed;
+    right: 20px;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 50%;
+    font-size: 25px;
+    transition: 0.5s bottom ease-in-out;
+    bottom: -50px;
+    cursor: pointer;
+}
+
+.scroll-btn.active {
+    bottom: 20px;
+}
+
+
+/* End scroll top */
+
+.message h4 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
